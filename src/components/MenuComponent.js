@@ -14,7 +14,7 @@ class Menu extends Component {
         this.renderDish = this.renderDish.bind(this)
     }
     componentDidMount() {
-        console.log('Menu component is mounted')
+        // console.log('Menu component is mounted')
     }
     onDishSelect(dish) {
         this.setState({
