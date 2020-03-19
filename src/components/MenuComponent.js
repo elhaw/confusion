@@ -12,6 +12,11 @@ class Menu extends Component {
         this.onCardClick = this.onCardClick.bind(this)
         this.onDishSelect = this.onDishSelect.bind(this)
         this.renderDish = this.renderDish.bind(this)
+
+        console.log("code insidde instructor is  invoked")
+    }
+    componentDidMount() {
+        console.log('Menu component is mounted')
     }
     onDishSelect(dish) {
         this.setState({
@@ -32,7 +37,7 @@ class Menu extends Component {
         if (dish != null) {
             return (
                 <Card>
-                    <Card.Img className= "img-fluid" src={dish.image} alt={dish.name} />
+                    <Card.Img className="img-fluid" src={dish.image} alt={dish.name} />
                     <Card.Body>
                         <Card.Title>
                             {dish.title}
@@ -44,7 +49,6 @@ class Menu extends Component {
                 </Card>
             )
         }
-
         else {
             return (
                 <div></div>
@@ -57,7 +61,7 @@ class Menu extends Component {
             return (
                 <div id={dish.id} onClick={this.onCardClick} key={dish.id} className="  m-3 cardWrapper col-12 col-md-5"  >
                     <Card className="bg-dark"  >
-                        <Card.Img className = "img-fluid" src={dish.image} alt={dish.name} />
+                        <Card.Img className="img-fluid" src={dish.image} alt={dish.name} />
                         <Card.ImgOverlay>
                             <Card.Title className="text-left" >{dish.name}</Card.Title>
                             {/* <Card.Text>
@@ -69,6 +73,8 @@ class Menu extends Component {
 
             )
         })
+        console.log('render method ( Menu Componet is invoked')
+
         return (
             <div className="container" >
                 <div className="row">
