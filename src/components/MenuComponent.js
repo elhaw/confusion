@@ -12,8 +12,6 @@ class Menu extends Component {
         this.onCardClick = this.onCardClick.bind(this)
         this.onDishSelect = this.onDishSelect.bind(this)
         this.renderDish = this.renderDish.bind(this)
-
-        console.log("code insidde instructor is  invoked")
     }
     componentDidMount() {
         console.log('Menu component is mounted')
