@@ -13,9 +13,7 @@ class Menu extends Component {
         this.onDishSelect = this.onDishSelect.bind(this)
         this.renderDish = this.renderDish.bind(this)
     }
-    componentDidMount() {
-        // console.log('Menu component is mounted')
-    }
+
     onDishSelect(dish) {
         this.setState({
             selectedDish: dish
@@ -35,7 +33,7 @@ class Menu extends Component {
         if (dish != null) {
             return (
                 <Card>
-                    <Card.Img className="img-fluid" src={dish.image} alt={dish.name} />
+                    <Card.Img src={dish.image} alt={dish.name} />
                     <Card.Body>
                         <Card.Title>
                             {dish.title}
@@ -77,7 +75,9 @@ class Menu extends Component {
                     {menu}
                 </div>
                 <div className="row">
-                    {this.renderDish(this.state.selectedDish)}
+                    <div className="m-3 cardWrapper col-12 col-md-5" >
+                        {this.renderDish(this.state.selectedDish)}
+                    </div>
                 </div>
             </div>
         )
