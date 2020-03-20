@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import { Card } from 'react-bootstrap'
+import DishDetail from './DishdetailComponent'
 
 class Menu extends Component {
     constructor(props) {
@@ -11,7 +12,6 @@ class Menu extends Component {
 
         this.onCardClick = this.onCardClick.bind(this)
         this.onDishSelect = this.onDishSelect.bind(this)
-        this.renderDish = this.renderDish.bind(this)
     }
 
     onDishSelect(dish) {
@@ -28,30 +28,6 @@ class Menu extends Component {
 
         this.onDishSelect(selectedDish)
     }
-
-    renderDish(dish) {
-        if (dish != null) {
-            return (
-                <Card>
-                    <Card.Img src={dish.image} alt={dish.name} />
-                    <Card.Body>
-                        <Card.Title>
-                            {dish.title}
-                        </Card.Title>
-                        <Card.Text>
-                            {dish.description}
-                        </Card.Text>
-                    </Card.Body>
-                </Card>
-            )
-        }
-        else {
-            return (
-                <div></div>
-            )
-        }
-    }
-
     render() {
         const menu = this.props.dishes.map((dish) => {
             return (
@@ -60,9 +36,6 @@ class Menu extends Component {
                         <Card.Img className="img-fluid" src={dish.image} alt={dish.name} />
                         <Card.ImgOverlay>
                             <Card.Title className="text-left" >{dish.name}</Card.Title>
-                            {/* <Card.Text>
-                                {dish.description}
-                            </Card.Text> */}
                         </Card.ImgOverlay>
                     </Card>
                 </div>
@@ -75,8 +48,8 @@ class Menu extends Component {
                     {menu}
                 </div>
                 <div className="row">
-                    <div className="m-3 cardWrapper col-12 col-md-5" >
-                        {this.renderDish(this.state.selectedDish)}
+                    <div className="m-3 cardWrapper col-12 col-md-5 text-left" >
+                       <DishDetail dish  = {this.state.selectedDish} />
                     </div>
                 </div>
             </div>

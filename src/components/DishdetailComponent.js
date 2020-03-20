@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import { Card } from 'react-bootstrap'
 
-class DishdetailComponent extends Component {
+class DishDetail extends Component {
 
     render() {
         const dish = this.props.dish;
@@ -30,4 +30,4 @@ class DishdetailComponent extends Component {
 
 
 
-export default DishdetailComponent
+export default DishDetail
