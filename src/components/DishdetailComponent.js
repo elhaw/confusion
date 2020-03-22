@@ -7,7 +7,7 @@ class DishDetail extends Component {
         if (dish != null) {
             return (
                 <div className="cardWrapper col-12 col-md-6 text-left">
-                    <Card className = "bg-dark text-light" >
+                    <Card className="bg-dark text-light" >
                         <Card.Img src={dish.image} alt={dish.name} />
                         <Card.Body>
                             <Card.Title>
@@ -32,9 +32,11 @@ class DishDetail extends Component {
 
             let getdishComments = dish.comments.map((comment) => {
                 return (
-                    <li key = {comment.id}>
+                    <li key={comment.id}>
                         <p>{comment.comment}</p>
-                        <p><span>{comment.owner}</span> {comment.date} </p>
+                        <p><span>{comment.owner}</span>
+                            {new Date(comment.date).toDateString()}
+                        </p>
                     </li>
                 )
             })
