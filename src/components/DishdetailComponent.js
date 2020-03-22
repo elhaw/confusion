@@ -34,7 +34,7 @@ class DishDetail extends Component {
                 return (
                     <li key={comment.id}>
                         <p>{comment.comment}</p>
-                        <p><span>{comment.owner}</span>
+                        <p><span>{`-- ${comment.author}, `}</span>
                             {new Date(comment.date).toDateString()}
                         </p>
                     </li>
