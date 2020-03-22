@@ -21,3 +21,7 @@ code {
 .cardWrapper>* {
   pointer-events: none;
 }
+
+.commentsSection {
+  line-height: 2;
+}
