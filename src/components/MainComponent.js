@@ -4,7 +4,6 @@ import { Navbar, NavbarBrand, Card } from 'react-bootstrap'
 import { DISHES } from '../shared/dishes'
 import Menu from './MenuComponent'
 import DishDetails from './DishdetailsComponent'
-// import DishDetail from './DishdetailComponent';
 
 class MainComponent extends Component {
   constructor(props) {
