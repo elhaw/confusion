@@ -1,10 +1,12 @@
 import React, { Component, Fragment } from 'react';
 import '../App.css';
-import { Navbar, NavbarBrand, Card } from 'react-bootstrap'
+import { Card } from 'react-bootstrap'
+
 import { DISHES } from '../shared/dishes'
 import Menu from './MenuComponent'
 import DishDetails from './DishdetailsComponent'
-
+import HeaderComponent from './HeaderComponent';
+import FooterComponent from './FooterComponent'
 class MainComponent extends Component {
   constructor(props) {
     super(props)
@@ -62,15 +64,10 @@ class MainComponent extends Component {
   render() {
     return (
       <div className="App">
-        <Navbar bg="primary" variant="dark" >
-          <div className="container">
-            <NavbarBrand href="/">
-              Ristorante con fusion
-                </NavbarBrand>
-        </div>
-        </Navbar>
+        <HeaderComponent />
         <Menu dishes={this.state.dishes} onCardClick={this.onCardClick} />
         <DishDetails selectedDish={this.state.selectedDish} />
+        <FooterComponent />
       </div>
     );
   }
