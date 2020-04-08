@@ -1,12 +1,20 @@
 import React, { Component, Fragment } from 'react';
+import {
+  BrowserRouter as Router,
+  Switch,
+  Route,
+  Link
+} from "react-router-dom";
+import HomeComponent from './HomeComponent'
 import '../App.css';
 import { Card } from 'react-bootstrap'
-
 import { DISHES } from '../shared/dishes'
 import Menu from './MenuComponent'
 import DishDetails from './DishdetailsComponent'
-import HeaderComponent from './HeaderComponent';
+import HeaderComponent from './HeaderComponent'
 import FooterComponent from './FooterComponent'
+
+
 class MainComponent extends Component {
   constructor(props) {
     super(props)
@@ -63,6 +71,7 @@ class MainComponent extends Component {
 
   render() {
     return (
+      
       <div className="App">
         <HeaderComponent />
         <Menu dishes={this.state.dishes} onCardClick={this.onCardClick} />

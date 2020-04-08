@@ -1,5 +1,5 @@
 import React, { Component, Fragment } from 'react'
-import { Navbar, NavbarBrand, Jumbotron } from 'react-bootstrap'
+import { Jumbotron } from 'react-bootstrap'
 class HeaderComponent extends Component {
     render() {
         return (
